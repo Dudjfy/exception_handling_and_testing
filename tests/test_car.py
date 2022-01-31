@@ -46,3 +46,8 @@ class TestCar(unittest.TestCase):
     def test_increase_value_with_args(self):
         self.car.increase_value(394200)
         self.assertEqual(self.car.price, 694200)
+
+    @unittest.expectedFailure
+    def test_increase_value_fail(self):
+        self.car.increase_value(1000)
+        self.assertEqual(self.car.price, 32000)
